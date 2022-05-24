@@ -1,5 +1,5 @@
 import mongoose, { Schema } from 'mongoose';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import IUser from '../interfaces/user';
 import config from 'config';
 import { InventorySchema } from './inventory.model';
