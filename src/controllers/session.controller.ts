@@ -3,6 +3,7 @@ import { createSession, findSessions, updateSession } from '../service/session.s
 import { validatePassword } from '../service/user.service';
 import config from 'config';
 import { signJwt } from '../utils/jwt';
+import _default from '../../config/default';
 
 export async function createUserSessionHandler(req: Request, res: Response) {
   // Validate the user's password
@@ -21,7 +22,7 @@ export async function createUserSessionHandler(req: Request, res: Response) {
       ...user,
       session: session._id
     },
-    { expiresIn: config.get('accessTokenTtl') } // 15 minutes
+    { expiresIn: _default.accessTokenTtl as string } // 15 minutes
   );
 
   // Create a refresh token
@@ -30,7 +31,7 @@ export async function createUserSessionHandler(req: Request, res: Response) {
       ...user,
       session: session._id
     },
-    { expiresIn: config.get('refreshTokenTtl') } // 1 year
+    { expiresIn: _default.refreshTokenTtl as string } // 1 year
   );
 
   // Return access and refresh tokens

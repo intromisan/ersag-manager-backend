@@ -4,9 +4,10 @@ import logger from './src/utils/logger';
 import connect from './src/utils/connect';
 import routes from './src/routes';
 import deserializeUser from './src/middleware/deserializeUser';
+import _default from './config/default';
 
-const port = config.get<number>('port');
-const host = config.get<string>('host');
+const port = _default.port as number;
+const host = _default.host as string;
 
 const app = express();
 

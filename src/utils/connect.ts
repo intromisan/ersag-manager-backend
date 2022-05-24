@@ -1,9 +1,10 @@
 import mongoose from 'mongoose';
 import config from 'config';
 import logger from './logger';
+import _default from '../../config/default';
 
 async function connect() {
-  const dbUri = config.get<string>('dbUri');
+  const dbUri = _default.dbUri as string;
 
   try {
     await mongoose.connect(dbUri);

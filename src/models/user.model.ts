@@ -3,6 +3,7 @@ import bcrypt from 'bcryptjs';
 import IUser from '../interfaces/user';
 import config from 'config';
 import { InventorySchema } from './inventory.model';
+import _default from '../../config/default';
 
 // const UserSchema: Schema = new Schema({
 //   uid: {
@@ -42,7 +43,8 @@ userSchema.pre('save', async function (next) {
     return next();
   }
 
-  const salt = await bcrypt.genSalt(config.get<number>('saltWorkFactor'));
+  const saltWorkFactor = 10;
+  const salt = await bcrypt.genSalt(saltWorkFactor);
 
   const hash = bcrypt.hashSync(user.password, salt);
 
