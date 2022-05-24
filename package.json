@@ -4,8 +4,8 @@
   "description": "backend for the ersag-manager app",
   "main": "dist/index.js",
   "scripts": {
-    "staging": "NODE_ENV=staging&& node build/index.js",
-    "production": "NODE_ENV=production&& node build/index.js",
+    "start": "set NODE_ENV=development&& node build/index.js",
+    "production": "set NODE_ENV=production&& node build/index.js",
     "postinstall": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "ts-node-dev --respawn --transpile-only index.ts"
