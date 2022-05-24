@@ -4,11 +4,10 @@
   "description": "backend for the ersag-manager app",
   "main": "dist/index.js",
   "scripts": {
-    "start": "set NODE_ENV=development && node src/index.ts",
-    "start-prod": "set NODE_ENV=production && node src/index.ts",
+    "start": "node build/index.js",
+    "postinstall": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
-    "build": "rm -rf build && prettier --write src/ && tsc"
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts"
   },
   "author": "Serge Najimov",
   "license": "ISC",
