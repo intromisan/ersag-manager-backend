@@ -4,11 +4,11 @@
   "description": "backend for the ersag-manager app",
   "main": "dist/index.js",
   "scripts": {
-    "start": "set NODE_ENV=development&& node build/index.js",
-    "production": "set NODE_ENV=production&& node build/index.js",
+    "start": "node build/index.js",
     "postinstall": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "ts-node-dev --respawn --transpile-only index.ts"
+    "dev": "ts-node-dev --respawn --transpile-only index.ts",
+    "build": "tsc --build"
   },
   "author": "Serge Najimov",
   "license": "ISC",
