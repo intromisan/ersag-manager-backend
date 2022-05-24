@@ -9,6 +9,6 @@ export default {
   saltWorkFactor: process.env.SALT_WORK_FACTOR,
   accessTokenTtl: process.env.ACCESS_TOKEN_TTL,
   refreshTokenTtl: process.env.REFRESH_TOKEN_TTL,
-  publicKey: process.env.PUBLIC_KEY,
-  privateKey: process.env.PRIVATE_KEY
+  publicKey: process.env.PUBLIC_KEY?.replace(/\\n/g, '\n'),
+  privateKey: process.env.PRIVATE_KEY?.replace(/\\n/g, '\n')
 };
