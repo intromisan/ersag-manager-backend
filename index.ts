@@ -1,9 +1,9 @@
 import express, { Response, Request } from 'express';
 import config from 'config';
-import logger from './utils/logger';
-import connect from './utils/connect';
-import routes from './routes';
-import deserializeUser from './middleware/deserializeUser';
+import logger from './src/utils/logger';
+import connect from './src/utils/connect';
+import routes from './src/routes';
+import deserializeUser from './src/middleware/deserializeUser';
 
 const port = config.get<number>('port');
 const host = config.get<string>('host');
