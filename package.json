@@ -4,7 +4,8 @@
   "description": "backend for the ersag-manager app",
   "main": "dist/index.js",
   "scripts": {
-    "start": "node build/index.js",
+    "start": "set NODE_ENV=development && node src/index.ts",
+    "start-prod": "set NODE_ENV=production && node src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
     "build": "rm -rf build && prettier --write src/ && tsc"
@@ -36,5 +37,8 @@
     "lodash": "^4.17.21",
     "mongoose": "^6.3.3",
     "zod": "^3.16.0"
+  },
+  "engines": {
+    "node": "16.14.0"
   }
 }
