@@ -1,0 +1,4 @@
+{
+  "appService.defaultWebAppToDeploy": "/subscriptions/042dc18d-4964-4cb8-8793-6247e3a958c2/microsoft.web/sites/subscriptions/042dc18d-4964-4cb8-8793-6247e3a958c2/resourceGroups/ersag-manager-resource/providers/Microsoft.Web/sites/ersag-manager",
+  "appService.deploySubpath": "."
+}
