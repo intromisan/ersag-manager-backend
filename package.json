@@ -4,9 +4,6 @@
   "description": "backend for the ersag-manager app",
   "main": "dist/index.js",
   "scripts": {
-    "start": "node build/index.js",
-    "postinstall": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "ts-node-dev --respawn --transpile-only index.ts",
     "build": "tsc --build"
   },
