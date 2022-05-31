@@ -2,8 +2,8 @@ import { IProduct } from './product';
 
 export interface IInventory {
   userId: string;
-  products: Array<{
+  products: {
     product: string;
     itemAmount: number;
-  }>;
+  }[];
 }
