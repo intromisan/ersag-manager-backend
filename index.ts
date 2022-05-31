@@ -1,13 +1,12 @@
 import express, { Response, Request } from 'express';
-import config from 'config';
 import logger from './src/utils/logger';
 import connect from './src/utils/connect';
 import routes from './src/routes';
 import deserializeUser from './src/middleware/deserializeUser';
-import _default from './config/default';
+import config from './src/config/default';
 
-const port = _default.port as number;
-const host = _default.host as string;
+const port = config.port as number;
+const host = config.host as string;
 
 const app = express();
 
