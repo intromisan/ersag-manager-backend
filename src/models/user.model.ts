@@ -1,9 +1,8 @@
 import mongoose, { Schema } from 'mongoose';
 import bcrypt from 'bcryptjs';
 import IUser from '../interfaces/user';
-import config from 'config';
 import { InventorySchema } from './inventory.model';
-import _default from '../../config/default';
+import config from '../config/default';
 
 // const UserSchema: Schema = new Schema({
 //   uid: {
@@ -37,13 +36,13 @@ const userSchema = new Schema(
 );
 
 userSchema.pre('save', async function (next) {
-  let user = this as IUser;
+  const user = this as IUser;
 
   if (!user.isModified('password')) {
     return next();
   }
 
-  const saltWorkFactor = 10;
+  const saltWorkFactor = config.saltWorkFactor as number;
   const salt = await bcrypt.genSalt(saltWorkFactor);
 
   const hash = bcrypt.hashSync(user.password, salt);

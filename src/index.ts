@@ -1,13 +1,12 @@
 import express, { Response, Request } from 'express';
-import config from 'config';
-import logger from './src/utils/logger';
-import connect from './src/utils/connect';
-import routes from './src/routes';
-import deserializeUser from './src/middleware/deserializeUser';
-import _default from './config/default';
+import logger from './utils/logger';
+import connect from './utils/connect';
+import routes from './routes';
+import deserializeUser from './middleware/deserializeUser';
+import config from './config/default';
 
-const port = _default.port as number;
-const host = _default.host as string;
+const port = config.port as number;
+const host = config.host as string;
 
 const app = express();
 
@@ -22,7 +21,7 @@ app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
 
-  if (req.method == 'OPTONS') {
+  if (req.method === 'OPTONS') {
     res.header('Access-Control-Allow-Methods', 'PUT, POST, PATCH, DELETE, GET');
     return res.status(200).json({});
   }

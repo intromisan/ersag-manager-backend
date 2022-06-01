@@ -4,8 +4,7 @@ import ISession from '../interfaces/session';
 import SessionModel from '../models/session.model';
 import { signJwt, verifyJwt } from '../utils/jwt';
 import { findUser } from './user.service';
-import config from 'config';
-import _default from '../../config/default';
+import config from '../config/default';
 
 export async function createSession(userId: string) {
   const session = await SessionModel.create({ user: userId });
@@ -39,7 +38,7 @@ export async function reIssueAccessToken({ refreshToken }: { refreshToken: strin
       ...user,
       session: session._id
     },
-    { expiresIn: _default.accessTokenTtl as string } // 15 minutes
+    { expiresIn: config.accessTokenTtl as string } // 15 minutes
   );
 
   return accessToken;
