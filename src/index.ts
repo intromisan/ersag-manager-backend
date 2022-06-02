@@ -29,8 +29,8 @@ app.use((req, res, next) => {
   next();
 });
 
-app.listen(port, host, async () => {
-  logger.info(`Server listening at http://${host}:${port}`);
+app.listen(port, async () => {
+  logger.info(`Server listening at http://localhost:${port}`);
 
   await connect();
 
