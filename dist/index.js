@@ -35,8 +35,8 @@ app.use((req, res, next) => {
     }
     next();
 });
-app.listen(port, host, () => __awaiter(void 0, void 0, void 0, function* () {
-    logger_1.default.info(`Server listening at http://${host}:${port}`);
+app.listen(port, () => __awaiter(void 0, void 0, void 0, function* () {
+    logger_1.default.info(`Server listening at http://localhost:${port}`);
     yield (0, connect_1.default)();
     (0, routes_1.default)(app);
 }));
